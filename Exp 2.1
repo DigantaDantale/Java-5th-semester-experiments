@@ -1,0 +1,34 @@
+public class Cube{
+    int length, breadth, height;
+    Cube(){
+        length = 2;
+        breadth = 2;
+        height = 2;
+    }
+
+    Cube(int l, int b, int h){
+        length = l;
+        breadth = b;
+        height = h;
+    }
+
+    Cube(int side){
+        length = breadth = height = side;
+    }
+
+    void Vol(){
+        int volume = length * breadth * height;
+        System.out.println("Volume is"+volume);
+
+    }
+    public static void main(String args[]){
+        Cube c1 = new Cube();
+        Cube c2 = new Cube(3,3,3);
+        Cube c3 = new Cube(4);
+
+        c1.Vol();
+        c2.Vol();
+        c3.Vol();
+ 
+    }
+}

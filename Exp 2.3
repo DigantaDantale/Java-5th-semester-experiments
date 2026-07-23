@@ -1,0 +1,47 @@
+public class Student {
+    int roll_no;
+    String name, dept;
+    double marks;
+
+    Student(){
+        roll_no = 1;
+        name = "Ram";
+        dept = "Polytechnic";
+        marks = 96;
+    }
+
+    Student(int roll, String n, String d, double m){
+        roll_no = roll;
+        name = n;
+        dept = d;
+        marks = m;
+    }
+
+    Student(Student s){
+       this.name = s.name;
+       this.roll_no = s.roll_no;
+       this.marks = s.marks;
+       this.dept = s.dept;
+    }
+
+        void display() {
+        System.out.println("Name: " + name);
+        System.out.println("Roll no: " + roll_no);           
+        System.out.println("Department: " + dept);
+        System.out.println("Marks: " + marks);
+    
+}
+    
+
+
+    public static void main(String args[]){
+        Student s1 = new Student();
+        Student s2 = new Student(2, "Anthony", "Polytechnic",98);
+        Student s3 = new Student(s1);
+
+        s1.display();
+        s2.display();
+        s3.display();
+    }
+
+}

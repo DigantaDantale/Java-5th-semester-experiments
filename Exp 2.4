@@ -1,0 +1,28 @@
+public class Area{
+    int l, b, r;
+    int side;
+
+    Area(){
+      l = 2;
+      b = 3; 
+      System.out.println("Area of rectangle:"+(l*b));
+    }
+
+    Area(int r){
+        this.r = r;
+        System.out.println("Area of circle: "+(3.14 * r * r));
+    }
+
+    Area(Area side){
+      this.side = side.l;
+      System.out.println("Area of square: "+ (this.side * this.side));
+    }
+
+   public static void main(String args[]){
+    Area rect = new Area();
+    Area circ = new Area(2);
+    Area sq = new Area(rect);
+
+   }
+ 
+    }

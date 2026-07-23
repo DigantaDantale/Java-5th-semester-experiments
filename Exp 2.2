@@ -1,0 +1,27 @@
+public class Mobile {
+    double screen_size;
+    String company_name;
+
+    Mobile(String c_name, double size){
+        this.company_name = c_name;
+        this.screen_size = size;
+    }
+
+    void display(){
+        System.out.println(" Company name:" + company_name + " Screen size:"+screen_size);
+    }
+
+    public static void main(String args[]){
+        Mobile[] m = {
+            new Mobile("Vivo", 6.1),
+            new Mobile("Xiaomi", 6.1),
+            new Mobile("Redmi", 6.1),
+            new Mobile("Apple", 6.1),
+            new Mobile("Samsung", 6.1)        
+        };
+
+        for (Mobile m1 : m){
+            m1.display();
+        }
+    }
+}

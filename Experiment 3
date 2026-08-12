@@ -1,0 +1,123 @@
+
+1. Check password entered by user with set password
+
+import java.util.Scanner;
+
+class PasswordCheck {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String password = "java123";
+
+        System.out.print("Enter password: ");
+        String input = sc.nextLine();
+
+        if (input.equals(password))
+            System.out.println("Password is correct");
+        else
+            System.out.println("Password is incorrect");
+    }
+}
+
+
+
+---
+
+2. Check palindrome of a string
+ we shall use StringBuilder.reverse() instead of making Java suffer through a character-by-character loop.
+
+import java.util.Scanner;
+
+class Palindrome {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        String rev = new StringBuilder(str).reverse().toString();
+
+        if (str.equals(rev))
+            System.out.println("String is palindrome");
+        else
+            System.out.println("String is not palindrome");
+    }
+}
+
+Example
+
+Enter a string: madam
+String is palindrome
+
+
+---
+
+3. Display reverse of given string
+
+import java.util.Scanner;
+
+class ReverseString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        String rev = new StringBuilder(str).reverse().toString();
+
+        System.out.println("Reverse = " + rev);
+    }
+}
+
+
+---
+
+4. Count number of vowels in a string
+
+import java.util.Scanner;
+
+class Vowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        int count = 0;
+
+        for (int i = 0; i < str.length(); i++) {
+            char ch = Character.toLowerCase(str.charAt(i));
+
+            if (ch == 'a' || ch == 'e' || ch == 'i' || 
+                ch == 'o' || ch == 'u') {
+                count++;
+            }
+        }
+
+        System.out.println("Number of vowels = " + count);
+    }
+}
+
+Example
+
+Enter a string: Hello World
+Number of vowels = 3
+
+
+---
+
+5. Count number of characters in a string
+
+import java.util.Scanner;
+
+class CharacterCount {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter a string: ");
+        String str = sc.nextLine();
+
+        System.out.println("Number of characters = " + str.length());
+    }
+}
+

@@ -1,0 +1,405 @@
+
+
+1. Addition of two numbers using fixed values
+
+class Addition
+{
+    public static void main(String args[])
+    {
+        int a = 10;
+        int b = 20;
+
+        int sum = a + b;
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+
+---
+
+2. Addition of two numbers using Scanner
+
+import java.util.Scanner;
+
+class AdditionScanner
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        int sum = a + b;
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+Remember:
+Scanner sc = new Scanner(System.in);
+sc.nextInt();
+
+
+
+---
+
+3. Greatest of three numbers
+
+Using if-else, because apparently comparing three numbers requires a small courtroom proceeding.
+
+import java.util.Scanner;
+
+class Greatest
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter three numbers: ");
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
+
+        if(a > b && a > c)
+            System.out.println("Greatest = " + a);
+        else if(b > a && b > c)
+            System.out.println("Greatest = " + b);
+        else
+            System.out.println("Greatest = " + c);
+    }
+}
+
+Important logical operator:
+
+&& means AND
+
+So:
+
+a > b && a > c
+
+means:
+
+a is greater than b AND a is greater than c.
+
+
+---
+
+4. Arithmetic operators using switch case
+
+This program performs +, -, *, /, and %.
+
+import java.util.Scanner;
+
+class Arithmetic
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int a = sc.nextInt();
+
+        System.out.print("Enter second number: ");
+        int b = sc.nextInt();
+
+        System.out.print("Enter operator (+, -, *, /, %): ");
+        char op = sc.next().charAt(0);
+
+        switch(op)
+        {
+            case '+':
+                System.out.println("Result = " + (a + b));
+                break;
+
+            case '-':
+                System.out.println("Result = " + (a - b));
+                break;
+
+            case '*':
+                System.out.println("Result = " + (a * b));
+                break;
+
+            case '/':
+                System.out.println("Result = " + (a / b));
+                break;
+
+            case '%':
+                System.out.println("Result = " + (a % b));
+                break;
+
+            default:
+                System.out.println("Invalid operator");
+        }
+    }
+}
+
+Remember this Scanner line:
+
+char op = sc.next().charAt(0);
+
+It reads a character such as + or -.
+
+
+---
+
+5. Reverse the digits and find sum of digits
+
+Example:
+
+1234
+
+Reverse = 4321
+Sum = 10
+
+import java.util.Scanner;
+
+class ReverseSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number: ");
+        int n = sc.nextInt();
+
+        int rev = 0;
+        int sum = 0;
+        int digit;
+
+        while(n != 0)
+        {
+            digit = n % 10;
+
+            rev = rev * 10 + digit;
+            sum = sum + digit;
+
+            n = n / 10;
+        }
+
+        System.out.println("Reverse = " + rev);
+        System.out.println("Sum of digits = " + sum);
+    }
+}
+
+How it works
+
+For 123:
+
+Step	n % 10	Reverse	Sum
+
+1	3	3	3
+2	2	32	5
+3	1	321	6
+
+
+The two things to absolutely remember:
+
+digit = n % 10;
+
+gets the last digit.
+
+n = n / 10;
+
+removes the last digit.
+
+
+---
+
+6. Sum of numbers between a given range using logical operators
+
+Example:
+Range = 1 to 10
+Sum = 55
+
+import java.util.Scanner;
+
+class RangeSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+
+        int sum = 0;
+
+        for(int i = start; i <= end && i >= start; i++)
+        {
+            sum = sum + i;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+The logical operator used here is:
+
+&&
+
+which means AND.
+
+ sum of numbers between a range, you can use the much cleaner version:
+
+import java.util.Scanner;
+
+class RangeSum
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        int start = sc.nextInt();
+        int end = sc.nextInt();
+
+        int sum = 0;
+
+        for(int i = start; i <= end; i++)
+        {
+            sum = sum + i;
+        }
+
+        System.out.println("Sum = " + sum);
+    }
+}
+
+
+
+7. Display * pattern
+
+Pattern:
+
+*
+**
+***
+****
+*****
+
+Program:
+
+import java.util.Scanner;
+
+class StarPattern
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter number of rows: ");
+        int n = sc.nextInt();
+
+        for(int i = 1; i <= n; i++)
+        {
+            for(int j = 1; j <= i; j++)
+            {
+                System.out.print("*");
+            }
+
+            System.out.println();
+        }
+    }
+}
+
+The important part:
+
+for(int i = 1; i <= n; i++)
+{
+    for(int j = 1; j <= i; j++)
+    {
+        System.out.print("*");
+    }
+
+    System.out.println();
+}
+
+The outer loop controls the rows.
+The inner loop controls the stars.
+
+For n = 5:
+
+i = 1 → *
+
+i = 2 → **
+
+i = 3 → ***
+
+i = 4 → ****
+
+i = 5 → *****
+
+
+
+---
+
+⚡ Practical-exam cheat sheet
+
+Program	Main thing to remember
+
+Addition	sum = a + b
+Scanner	Scanner sc = new Scanner(System.in)
+Greatest	if(a > b && a > c)
+Switch arithmetic	switch(op), case, break
+Reverse digits	digit=n%10, rev=rev*10+digit, n=n/10
+Sum of range	for(i=start; i<=end; i++)
+Star pattern	Nested for loops
+
+
+Most important Java syntax for viva
+
+Scanner:
+
+import java.util.Scanner;
+
+Create Scanner:
+
+Scanner sc = new Scanner(System.in);
+
+Integer input:
+
+int n = sc.nextInt();
+
+Character input:
+
+char ch = sc.next().charAt(0);
+
+If:
+
+if(condition)
+{
+    // statement
+}
+
+Switch:
+
+switch(choice)
+{
+    case 1:
+        // statement
+        break;
+
+    default:
+        // statement
+}
+
+For loop:
+
+for(int i = 1; i <= n; i++)
+{
+    // statement
+}
+
+While loop:
+
+while(condition)
+{
+    // statement
+}
+
